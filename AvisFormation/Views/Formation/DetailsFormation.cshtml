@@ -1,0 +1,35 @@
+﻿@model DetailFormationViewModel;
+@{
+    ViewData["Title"] = Model.Formation.Nom;
+}
+
+<h1>@Model.Formation.Nom</h1>
+<p>@Model.Formation.Description</p>
+
+<div>
+<h3>La formation est notée @Model.NoteMoyenne /5</h3>
+    @for(int i=0; i<Model.NoteMoyenne; i++)
+    {
+        <span class="fa fa-star"></span>
+    }
+
+    <p>Voici ce qu'en disent les anciens élèves:</p>
+
+@foreach(var avis in Model.Formation.Avis)
+{
+    <div class="avis-block">
+        
+        <div>
+                @avis.Note/5
+                @for (int i = 0; i <= avis.Note; i++)
+                {
+                <span class="fa fa-star"></span>
+                }
+        </div>
+            <div><i>@avis.NomUtilisateur</i></div>
+            <div>@avis.Commentaire</div>
+    </div>
+
+}
+
+</div>

@@ -1,0 +1,61 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.jumbotron{
+    background-color:#343A40;
+    color: orange;
+}
+
+.avantages{
+    background-color: #F5F5F5;
+    margin-top:20px;
+    padding-top:10px;
+
+
+}
+
+.section-badge{
+    background-color: #E6F2F5;
+
+}
+
+.widget-top {
+    background-color: white;
+    padding: 15px;
+}
+
+.widget-bottom {
+    background-color: orange;
+    color: white;
+    padding: 15px;
+}
+
+.formation-block {
+    background-color: #F5F5F5;
+    margin:10px;
+    padding:10px;
+}
+
+.avis-block{
+    background-color: #F5F5F5;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px;
+
+}

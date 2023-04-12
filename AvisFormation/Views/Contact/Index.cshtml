@@ -1,0 +1,39 @@
+﻿@model EnvoieEmailViewModel
+@{
+    ViewData["Title"] = "Contactez nous";
+}
+
+<h1>Contactez nous</h1>
+<p>Une question?</p>
+<p>Vous avez des remarques à nous faire?</p>
+<p>Nous sommes là !</p>
+
+<form action="/Contact/SaveMessage">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    @*quand on met la value dans les input c'est pour les garder en mémoire
+    si il y a des erreurs l'utilisateur n'a pas besoin de tout retaper ça va etre 
+    sauvegarder dans on instance de view model*@
+
+    <div class="form-group">
+        <label>Nom:</label>
+        <input type="text" name="nom" value="@Model.Nom" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" value="@Model.Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Message:</label>
+        <textarea cols="10" name="message" class="form-control">@Model.Message</textarea>
+    </div>
+   <br />
+   
+    <input type="submit" value="envoyer" class="btn btn-warning" />
+    
+
+</form>
+
+
+
+
+

@@ -1,0 +1,67 @@
+﻿@model List<DetailFormationViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="jumbotron mt-4 p-5 rounded text-center">
+    <h1>Avis Formations</h1>
+    <p>Soyer sûr de la formation que vous allez acheter !</p>
+</div>
+
+<section class="avantages">
+<div class="row text-center">
+    <div class="col-md-6 col-lg-3">
+        <h3><span class="fa fa-check"></span>Authentiques Avis</h3>
+        <p>Des avis d'élèves bien réels !'</p>
+    </div>
+    <div class="col-md-6 col-lg-3">
+            <h3><span class="fa fa-check"></span>Transparence</h3>
+            <p>Rien ne vous est caché</p>
+    </div>
+    <div class="col-md-6 col-lg-3">
+            <h3><span class="fa fa-solid fa-triangle-exclamation"></span>Plateforme indépendante</h3>
+        <p>Indépendance des organismes de formation</p>
+    </div>
+    <div class="col-md-6 col-lg-3">
+            <h3>
+                <span class="fa fa-dollar-sign"></span>Gratuit
+        </h3>
+        <p>Tout notre travail gratuit pour vous !</p>
+    </div>
+</div>
+</section>
+
+<section class="section-badge text-center">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Professionnels de la formation, affichez notre badge sur votre site</h4>
+        </div>
+        <div class="col-md-4">
+            <div class="widget-top"> Avis elèves 4.8/5 <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></div>
+            <div class="widget-bottom">Avis récoltés par AvisFormations.fr</div>
+        </div>
+    </div>
+
+</section>
+
+        <p>Voici notre Top formations:</p>
+
+<div class="row text-center">
+
+    @foreach (var formation in Model)
+
+{
+
+    <div class="formation-block col-md-6 col-lg-4">
+            <a asp-controller="Formation" asp-action="DetailsFormation"
+           asp-route-idFormation="@formation.Formation.Id">@formation.Formation.Nom</a>
+
+            <div>@formation.NoteMoyenne/5<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></div>
+            <p>@formation.Formation.Description</p>
+    </div>
+   
+}
+
+
+</div>
